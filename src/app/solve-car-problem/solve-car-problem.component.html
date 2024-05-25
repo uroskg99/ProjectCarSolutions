@@ -1,0 +1,24 @@
+<div class="page-holder">
+  <div>
+    <div class="form-holder">
+      <h2>
+        Vas automobil je {{ carType.marka.name }}, tip goriva je
+        {{ carType.tipGoriva.name }} i tip menjaca je {{ carType.menjac.name }}
+      </h2>
+
+      <p>Vas simptom - {{ carSymptom.symptom.text }}</p>
+
+      <h2>Resenje</h2>
+      <p>{{ solveMessage }}</p>
+
+      <div class="btns-holder">
+        <button class="back-btn" (click)="backToHomepage()">
+          Nazad na pocetnu
+        </button>
+        <button class="not-helpfull" (click)="solutionNotHelpfull()">
+          Ovo resenje mi nije pomoglo
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

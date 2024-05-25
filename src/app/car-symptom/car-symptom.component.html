@@ -1,0 +1,25 @@
+<div class="page-holder">
+  <div>
+    <div class="form-holder">
+      <h2>
+        Vas automobil je {{ carType.marka.name }}, tip goriva je
+        {{ carType.tipGoriva.name }} i tip menjaca je {{ carType.menjac.name }}
+      </h2>
+      <p>Izaberite kvar na vasem automobilu</p>
+
+      <form [formGroup]="form" (ngSubmit)="goNext()">
+        <label for="marka">Simptom <span>*</span></label>
+        <select name="symptom" id="symptom" formControlName="symptom">
+          <option *ngFor="let symptom of symptoms" [ngValue]="symptom">
+            {{ symptom.text }}
+          </option>
+        </select>
+
+        <div class="btn-holder">
+          <button (click)="goBack()">Go back</button>
+          <button [disabled]="!form.valid" type="submit">Sledeci korak</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

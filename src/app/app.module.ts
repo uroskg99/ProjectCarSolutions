@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CarTypeComponent } from './car-type/car-type.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarSymptomComponent } from './car-symptom/car-symptom.component';
+import { SolveCarProblemComponent } from './solve-car-problem/solve-car-problem.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, CarTypeComponent, CarSymptomComponent, SolveCarProblemComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
