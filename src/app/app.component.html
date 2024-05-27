@@ -8,21 +8,33 @@
     *ngIf="pageIndex === 1"
     (goNextDiagnostic)="diagnosticGoNext()"
   ></app-diagnostic>
-  <app-car-symptom
+  <app-pogon
     *ngIf="pageIndex === 2"
+    [carType]="carTypeForm"
+    (resetForms)="resetForms()"
+    (goNextFromPogon)="goNextFromPogon()"
+  ></app-pogon>
+  <app-emisija-gasova
+    *ngIf="pageIndex === 3"
+    (goNextFromEmisija)="goNextFromEmisija()"
+    (resetForms)="resetForms()"
+    [carType]="carTypeForm"
+  ></app-emisija-gasova>
+  <app-car-symptom
+    *ngIf="pageIndex === 4"
     [carType]="carTypeForm"
     (saveFormEvent)="getCarSymptom($event)"
     (goBackEvent)="getBackAndRestoreForm()"
   ></app-car-symptom>
   <app-solve-car-problem
-    *ngIf="pageIndex === 3"
+    *ngIf="pageIndex === 5"
     [carType]="carTypeForm"
     [carSymptom]="carSymptom"
     (resetForms)="resetForms()"
     (checkExpenses)="goToExpenses()"
   ></app-solve-car-problem>
   <app-problem-expenses
-    *ngIf="pageIndex === 4"
+    *ngIf="pageIndex === 6"
     [carType]="carTypeForm"
     [carSymptom]="carSymptom"
     (resetForms)="resetForms()"

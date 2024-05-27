@@ -1,0 +1,26 @@
+<div class="page-holder">
+  <div>
+    <div class="form-holder">
+      <h2>
+        Vas automobil je {{ carType.marka.name }}, tip goriva je
+        {{ carType.tipGoriva.name }} i tip menjaca je {{ carType.menjac.name }}
+      </h2>
+
+      <form>
+        <label for="emisija">Emisije gasova <span>*</span></label>
+        <select name="emisija" id="emisija">
+          <option *ngFor="let emisija of emisije">
+            {{ emisija }}
+          </option>
+        </select>
+
+        <div class="btns-holder">
+          <button class="not-helpfull" (click)="backToHomepage()">
+            Nazad na pocetnu
+          </button>
+          <button class="back-btn" (click)="goNext()">Dalje</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

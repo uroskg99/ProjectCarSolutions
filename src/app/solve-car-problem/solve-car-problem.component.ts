@@ -17,19 +17,36 @@ export class SolveCarProblemComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.carType, 'CAR TYPE');
     console.log(this.carSymptom, 'CAR SYMPTOM');
-    if (
-      this.carSymptom.symptom.label === 'povecanaPotrosnja' &&
-      this.carType.tipGoriva.label === 'dizel'
-    ) {
+    if (this.carSymptom.symptom.label === 'povecanaPotrosnja') {
       this.solveMessage = SOLUTIONS.zameniFilterGoriva;
-    } else if (
-      this.carType.menjac.label === 'automatik' &&
-      this.carType.tipGoriva.label === 'benzin' &&
-      this.carSymptom.symptom.label === 'problemiKocenja'
-    ) {
+      return;
+    } else if (this.carSymptom.symptom.label === 'problemiKocenja') {
       this.solveMessage = SOLUTIONS.zameniDiskove;
+      return;
+    } else if (this.carSymptom.symptom.label === 'nepravilanRadMotora') {
+      this.solveMessage = SOLUTIONS.zameniKais;
+      return;
+    } else if (this.carSymptom.symptom.label === 'vibracijaPrilikomVoznje') {
+      this.solveMessage = SOLUTIONS.zameniGume;
+      return;
+    } else if (this.carSymptom.symptom.label === 'cudniMirisi') {
+      this.solveMessage = SOLUTIONS.zameniVazduh;
+      return;
+    } else if (this.carSymptom.symptom.label === 'teskoMenjanjeBrzina') {
+      this.solveMessage = SOLUTIONS.zameniMenjac;
+      return;
+    } else if (this.carSymptom.symptom.label === 'pregrejavanjeMotora') {
+      this.solveMessage = SOLUTIONS.zameniTermostat;
+      return;
+    } else if (this.carSymptom.symptom.label === 'indikatorNaTabli') {
+      this.solveMessage = SOLUTIONS.dodajteVoduZaPrskanje;
+      return;
+    } else if (this.carSymptom.symptom.label === 'nedostatakSnage') {
+      this.solveMessage = SOLUTIONS.zameniTurbo;
+      return;
     } else {
       this.solveMessage = SOLUTIONS.defaultMessage;
+      return;
     }
   }
 
@@ -38,14 +55,24 @@ export class SolveCarProblemComponent implements OnInit {
   }
 
   solutionNotHelpfull(): void {
-    if (
-      this.carType.menjac.label === 'automatik' &&
-      this.carType.tipGoriva.label === 'benzin' &&
-      this.carSymptom.symptom.label === 'problemiKocenja'
-    ) {
+    if (this.carSymptom.symptom.label === 'problemiKocenja') {
       this.solveMessage = SOLUTIONS.zameniPlocice;
+      return;
+    } else if (this.carSymptom.symptom.label === 'nepravilanRadMotora') {
+      this.solveMessage = SOLUTIONS.zameniMotor;
+      return;
+    } else if (this.carSymptom.symptom.label === 'vibracijaPrilikomVoznje') {
+      this.solveMessage = SOLUTIONS.zameniTrap;
+      return;
+    } else if (this.carSymptom.symptom.label === 'pregrejavanjeMotora') {
+      this.solveMessage = SOLUTIONS.zameniAntifriz;
+      return;
+    } else if (this.carSymptom.symptom.label === 'nedostatakSnage') {
+      this.solveMessage = SOLUTIONS.zameniVakuumCreva;
+      return;
     } else {
       this.solveMessage = SOLUTIONS.defaultMessage;
+      return;
     }
   }
 

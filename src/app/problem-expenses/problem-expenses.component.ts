@@ -11,9 +11,13 @@ export class ProblemExpensesComponent implements OnInit {
   @Output() resetForms = new EventEmitter<any>();
   price = 300;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.price = Math.floor(Math.random() * 301) + 200;
+  }
 
-  lowerPrice(): void {}
+  lowerPrice(): void {
+    this.price = Math.floor(Math.random() * 181) + 20;
+  }
 
   backToHomepage(): void {
     this.resetForms.emit();

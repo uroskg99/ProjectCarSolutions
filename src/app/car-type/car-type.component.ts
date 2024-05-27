@@ -79,6 +79,7 @@ export class CarTypeComponent implements OnInit {
   registerMarkaChange(): void {
     this.form.controls['marka'].valueChanges.subscribe((res) => {
       this.form.controls.tipGoriva.enable();
+      this.form.controls['menjac'].enable();
       this.selectedMarka = res;
       if (this.selectedMarka.label === 'tesla') {
         this.tipGoriva = [

@@ -10,9 +10,11 @@ import { CarSymptomComponent } from './car-symptom/car-symptom.component';
 import { SolveCarProblemComponent } from './solve-car-problem/solve-car-problem.component';
 import { DiagnosticComponent } from './diagnostic/diagnostic.component';
 import { ProblemExpensesComponent } from './problem-expenses/problem-expenses.component';
+import { PogonComponent } from './pogon/pogon.component';
+import { EmisijaGasovaComponent } from './emisija-gasova/emisija-gasova.component';
 
 @NgModule({
-  declarations: [AppComponent, CarTypeComponent, CarSymptomComponent, SolveCarProblemComponent, DiagnosticComponent, ProblemExpensesComponent],
+  declarations: [AppComponent, CarTypeComponent, CarSymptomComponent, SolveCarProblemComponent, DiagnosticComponent, ProblemExpensesComponent, PogonComponent, EmisijaGasovaComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -21,9 +21,20 @@ export class AppComponent {
     this.pageIndex = 2;
   }
 
+  goNextFromPogon(): void {
+    this.pageIndex = 3;
+    if(this.carTypeForm.marka.label === 'tesla') {
+      this.pageIndex = 4;
+    }
+  }
+
+  goNextFromEmisija(): void {
+    this.pageIndex = 4;
+  }
+
   getCarSymptom(e: any): void {
     this.carSymptom = e;
-    this.pageIndex = 3;
+    this.pageIndex = 5;
   }
 
   resetForms(): void {
@@ -37,6 +48,6 @@ export class AppComponent {
   }
 
   goToExpenses(): void {
-    this.pageIndex = 4;
+    this.pageIndex = 6;
   }
 }
