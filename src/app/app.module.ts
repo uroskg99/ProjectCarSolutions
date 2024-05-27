@@ -9,9 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarSymptomComponent } from './car-symptom/car-symptom.component';
 import { SolveCarProblemComponent } from './solve-car-problem/solve-car-problem.component';
 import { DiagnosticComponent } from './diagnostic/diagnostic.component';
+import { ProblemExpensesComponent } from './problem-expenses/problem-expenses.component';
 
 @NgModule({
-  declarations: [AppComponent, CarTypeComponent, CarSymptomComponent, SolveCarProblemComponent, DiagnosticComponent],
+  declarations: [AppComponent, CarTypeComponent, CarSymptomComponent, SolveCarProblemComponent, DiagnosticComponent, ProblemExpensesComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

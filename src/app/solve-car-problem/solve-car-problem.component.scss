@@ -15,6 +15,13 @@ body {
   height: 90vh;
 }
 
+a {
+  text-decoration: underline;
+  font-weight: 600;
+  color: rgb(63, 63, 255);
+  cursor: pointer;
+}
+
 .form-holder {
   background-color: #fff;
   padding: 2rem;
