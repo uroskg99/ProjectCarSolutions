@@ -35,4 +35,8 @@ export class AppComponent {
   getBackAndRestoreForm(): void {
     this.pageIndex = 0;
   }
+
+  goToExpenses(): void {
+    this.pageIndex = 4;
+  }
 }

@@ -19,5 +19,12 @@
     [carType]="carTypeForm"
     [carSymptom]="carSymptom"
     (resetForms)="resetForms()"
+    (checkExpenses)="goToExpenses()"
   ></app-solve-car-problem>
+  <app-problem-expenses
+    *ngIf="pageIndex === 4"
+    [carType]="carTypeForm"
+    [carSymptom]="carSymptom"
+    (resetForms)="resetForms()"
+  ></app-problem-expenses>
 </div>

@@ -10,6 +10,7 @@ export class SolveCarProblemComponent implements OnInit {
   @Input() carType!: any;
   @Input() carSymptom!: any;
   @Output() resetForms = new EventEmitter<any>();
+  @Output() checkExpenses = new EventEmitter<any>();
   solveMessage = '';
   allSolutions = SOLUTIONS;
 
@@ -46,5 +47,9 @@ export class SolveCarProblemComponent implements OnInit {
     } else {
       this.solveMessage = SOLUTIONS.defaultMessage;
     }
+  }
+
+  goToExpenses(): void {
+    this.checkExpenses.emit();
   }
 }

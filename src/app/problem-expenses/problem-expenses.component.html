@@ -1,1 +1,24 @@
-<p>problem-expenses works!</p>
+<div class="page-holder">
+  <div>
+    <div class="form-holder">
+      <h2>
+        Vas automobil je {{ carType.marka.name }}, tip goriva je
+        {{ carType.tipGoriva.name }} i tip menjaca je {{ carType.menjac.name }}
+      </h2>
+
+      <p>Vas simptom - {{ carSymptom.symptom.text }}</p>
+
+      <h2>Cena</h2>
+      <p>{{ price }}$</p>
+
+      <div class="btns-holder">
+        <button class="back-btn" (click)="backToHomepage()">
+          Nazad na pocetnu
+        </button>
+        <button class="not-helpfull" (click)="lowerPrice()">
+          Pronadji mi jeftiniju cenu
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
