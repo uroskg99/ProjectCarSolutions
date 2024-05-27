@@ -11,9 +11,11 @@ export class CarTypeComponent implements OnInit {
   @Input() carTypeForm?: any;
   form = new FormGroup({
     marka: new FormControl(null, Validators.required),
-    tipGoriva: new FormControl(null, Validators.required),
-    menjac: new FormControl(null, Validators.required),
+    tipGoriva: new FormControl<any>(null, Validators.required),
+    menjac: new FormControl<any>(null, Validators.required),
   });
+
+  selectedMarka: any = null;
 
   marke = [
     {
@@ -35,6 +37,10 @@ export class CarTypeComponent implements OnInit {
     {
       label: 'opel',
       name: 'Opel',
+    },
+    {
+      label: 'tesla',
+      name: 'Tesla',
     },
   ];
 
@@ -62,9 +68,41 @@ export class CarTypeComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.registerMarkaChange();
+  }
 
   goNext(): void {
     this.saveFormEvent.emit(this.form.getRawValue());
+  }
+
+  registerMarkaChange(): void {
+    this.form.controls['marka'].valueChanges.subscribe((res) => {
+      this.form.controls.tipGoriva.enable();
+      this.selectedMarka = res;
+      if (this.selectedMarka.label === 'tesla') {
+        this.tipGoriva = [
+          {
+            label: 'elektricni',
+            name: 'Elektricni automobil',
+          },
+        ];
+        this.form.controls['tipGoriva'].patchValue(this.tipGoriva[0]);
+        this.form.controls['tipGoriva'].disable();
+        this.form.controls['menjac'].patchValue(this.menjaci[0]);
+        this.form.controls['menjac'].disable();
+      } else {
+        this.tipGoriva = [
+          {
+            label: 'benzin',
+            name: 'Benzin',
+          },
+          {
+            label: 'dizel',
+            name: 'Dizel',
+          },
+        ];
+      }
+    });
   }
 }

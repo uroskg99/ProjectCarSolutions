@@ -1,0 +1,52 @@
+<div class="page-holder">
+  <div>
+    <div class="form-holder">
+      <h2>Imate problem sa kolima? Tu smo da pomognemo</h2>
+      <p>Izaberite specifikacije vaseg automobila</p>
+
+      <form [formGroup]="form" (ngSubmit)="goNext()">
+        <label for="godina">Godina proizvodnje automobila <span>*</span></label>
+        <input
+          type="number"
+          id="godina"
+          name="godina"
+          formControlName="godina"
+        />
+
+        <label for="maliServis"
+          >Kada je poslednji put radjen mali servis <span>*</span></label
+        >
+        <select name="maliServis" id="maliServis" formControlName="maliServis">
+          <option *ngFor="let servis of maliServisi" [ngValue]="servis">
+            {{ servis.name }}
+          </option>
+        </select>
+
+        <p class="information">
+          {{ informacijeMessage }}
+        </p>
+
+        <div class="btn-holder">
+          <button
+            *ngIf="informacijePrikaz"
+            [disabled]="!form.valid"
+            type="button"
+            (click)="prikaziInformacije()"
+          >
+            Prikazi informacije
+          </button>
+        </div>
+
+        <div class="btn-holder">
+          <button
+            *ngIf="!informacijePrikaz"
+            [disabled]="!form.valid"
+            type="submit"
+          >
+            Sledeci korak
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

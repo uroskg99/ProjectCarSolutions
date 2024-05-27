@@ -17,9 +17,13 @@ export class AppComponent {
     this.pageIndex = 1;
   }
 
+  diagnosticGoNext(): void {
+    this.pageIndex = 2;
+  }
+
   getCarSymptom(e: any): void {
     this.carSymptom = e;
-    this.pageIndex = 2;
+    this.pageIndex = 3;
   }
 
   resetForms(): void {

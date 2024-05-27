@@ -12,18 +12,32 @@
           </option>
         </select>
 
-        <label for="tipGoriva">Tip goriva <span>*</span></label>
-        <select name="tipGoriva" id="tipGoriva" formControlName="tipGoriva">
+        <label *ngIf="selectedMarka !== null" for="tipGoriva"
+          >Tip goriva <span>*</span></label
+        >
+        <select
+          *ngIf="selectedMarka !== null"
+          name="tipGoriva"
+          id="tipGoriva"
+          formControlName="tipGoriva"
+        >
           <option *ngFor="let tip of tipGoriva" [ngValue]="tip">
             {{ tip.name }}
           </option>
         </select>
 
-        <label for="menjac">Menjac <span>*</span></label>
-        <select name="menjac" id="menjac" formControlName="menjac">
-            <option *ngFor="let menjac of menjaci" [ngValue]="menjac">
-                {{ menjac.name }}
-              </option>
+        <label *ngIf="selectedMarka !== null" for="menjac"
+          >Menjac <span>*</span></label
+        >
+        <select
+          *ngIf="selectedMarka !== null"
+          name="menjac"
+          id="menjac"
+          formControlName="menjac"
+        >
+          <option *ngFor="let menjac of menjaci" [ngValue]="menjac">
+            {{ menjac.name }}
+          </option>
         </select>
 
         <div class="btn-holder">

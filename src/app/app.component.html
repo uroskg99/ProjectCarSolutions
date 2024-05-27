@@ -4,14 +4,18 @@
     (saveFormEvent)="getCarTypeForm($event)"
     [carTypeForm]="carTypeForm"
   ></app-car-type>
-  <app-car-symptom
+  <app-diagnostic
     *ngIf="pageIndex === 1"
+    (goNextDiagnostic)="diagnosticGoNext()"
+  ></app-diagnostic>
+  <app-car-symptom
+    *ngIf="pageIndex === 2"
     [carType]="carTypeForm"
     (saveFormEvent)="getCarSymptom($event)"
     (goBackEvent)="getBackAndRestoreForm()"
   ></app-car-symptom>
   <app-solve-car-problem
-    *ngIf="pageIndex === 2"
+    *ngIf="pageIndex === 3"
     [carType]="carTypeForm"
     [carSymptom]="carSymptom"
     (resetForms)="resetForms()"

@@ -8,9 +8,10 @@ import { CarTypeComponent } from './car-type/car-type.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarSymptomComponent } from './car-symptom/car-symptom.component';
 import { SolveCarProblemComponent } from './solve-car-problem/solve-car-problem.component';
+import { DiagnosticComponent } from './diagnostic/diagnostic.component';
 
 @NgModule({
-  declarations: [AppComponent, CarTypeComponent, CarSymptomComponent, SolveCarProblemComponent],
+  declarations: [AppComponent, CarTypeComponent, CarSymptomComponent, SolveCarProblemComponent, DiagnosticComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
