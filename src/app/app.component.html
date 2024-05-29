@@ -31,12 +31,13 @@
     [carType]="carTypeForm"
     [carSymptom]="carSymptom"
     (resetForms)="resetForms()"
-    (checkExpenses)="goToExpenses()"
+    (checkExpenses)="goToExpenses($event)"
   ></app-solve-car-problem>
   <app-problem-expenses
     *ngIf="pageIndex === 6"
     [carType]="carTypeForm"
     [carSymptom]="carSymptom"
+    [solution]="solution"
     (resetForms)="resetForms()"
   ></app-problem-expenses>
 </div>

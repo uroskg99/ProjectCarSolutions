@@ -11,6 +11,7 @@ export class AppComponent {
   carTypeForm: any;
   carSymptom: any;
   pageIndex = 0;
+  solution: any;
 
   getCarTypeForm(e: any): void {
     this.carTypeForm = e;
@@ -23,7 +24,7 @@ export class AppComponent {
 
   goNextFromPogon(): void {
     this.pageIndex = 3;
-    if(this.carTypeForm.marka.label === 'tesla') {
+    if (this.carTypeForm.marka.label === 'tesla') {
       this.pageIndex = 4;
     }
   }
@@ -47,7 +48,8 @@ export class AppComponent {
     this.pageIndex = 0;
   }
 
-  goToExpenses(): void {
+  goToExpenses(e: any): void {
+    this.solution = e;
     this.pageIndex = 6;
   }
 }

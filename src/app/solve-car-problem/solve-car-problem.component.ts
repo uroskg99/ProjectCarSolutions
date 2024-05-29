@@ -77,6 +77,6 @@ export class SolveCarProblemComponent implements OnInit {
   }
 
   goToExpenses(): void {
-    this.checkExpenses.emit();
+    this.checkExpenses.emit(this.solveMessage);
   }
 }

@@ -14,11 +14,11 @@ export class DiagnosticComponent implements OnInit {
   });
 
   maliServisi = [
-    { label: '10', name: 'Manje od 10km' },
-    { label: '10-50', name: 'Izmedju 10km i 50km' },
-    { label: '50-100', name: 'Izmedju 50km i 100km' },
-    { label: '100-200', name: 'Izmedju 100km i 200km' },
-    { label: '200', name: 'Preko 200km' },
+    { label: '100', name: 'Manje od 100km' },
+    { label: '500-1500', name: 'Izmedju 500km i 1500km' },
+    { label: '1500-5000', name: 'Izmedju 1500km i 5000km' },
+    { label: '5000-7500', name: 'Izmedju 5000km i 7500km' },
+    { label: '7500-10000', name: 'Izmedju 7500km i 10000km' },
   ];
 
   informacijePrikaz = true;
@@ -37,14 +37,14 @@ export class DiagnosticComponent implements OnInit {
 
     if (
       this.form.controls['godina'].value! < 2000 &&
-      (this.form.controls['maliServis'].value.label === '200' ||
-        this.form.controls['maliServis'].value.label === '100-200')
+      (this.form.controls['maliServis'].value.label === '100' ||
+        this.form.controls['maliServis'].value.label === '500-1500')
     ) {
       this.informacijeMessage = 'Obavezno uraditi mali servis';
     } else if (
       this.form.controls['godina'].value! >= 2000 &&
-      (this.form.controls['maliServis'].value.label === '10' ||
-        this.form.controls['maliServis'].value.label === '10-50')
+      (this.form.controls['maliServis'].value.label === '100' ||
+        this.form.controls['maliServis'].value.label === '500-1500')
     ) {
       this.informacijeMessage = 'Mali servis nije obavezan';
     } else {
